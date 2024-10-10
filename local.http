@@ -1,0 +1,3 @@
+### Obtener el Hola Mundo de NestJS
+GET http://localhost:3000/
+Content-Type: application/json

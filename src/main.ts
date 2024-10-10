@@ -7,10 +7,16 @@
  * with this source code in the file LICENSE.
  */
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from '@/app.module';
+import initializeLogger from './utils/initialize.logger';
+import { getInterceptorsByEnvironment } from './utils/interceptors.util';
 
 async function bootstrap() {
+  initializeLogger();
+
   const app = await NestFactory.create(AppModule);
+  app.useGlobalInterceptors(...getInterceptorsByEnvironment());
+
   await app.listen(3000);
 }
 bootstrap();
