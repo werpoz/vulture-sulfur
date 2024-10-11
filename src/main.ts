@@ -13,10 +13,8 @@ import { getInterceptorsByEnvironment } from './utils/interceptors.util';
 
 async function bootstrap() {
   initializeLogger();
-
   const app = await NestFactory.create(AppModule);
   app.useGlobalInterceptors(...getInterceptorsByEnvironment());
-
   await app.listen(3000);
 }
 bootstrap();

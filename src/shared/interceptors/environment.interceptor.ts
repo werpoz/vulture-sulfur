@@ -22,7 +22,7 @@ export class EnvironmentInterceptor implements NestInterceptor {
     const response = context.switchToHttp().getResponse();
 
     const env = getEnvironment();
-    response.setHeader('X-Env', env.replace(/^./, env[0].toUpperCase()));
+    response.setHeader('X-Env', `${env}`);
     response.setHeader('X-Powered-By', 'NestJS');
 
     return next.handle().pipe(

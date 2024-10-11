@@ -11,9 +11,7 @@ import { Logger } from '@nestjs/common';
 import filenameConfig from '@/utils/filename.config';
 
 export default () => {
-  const logger = new Logger('AppLogger');
-  logger.verbose(
-    `Application running on env \'${process.env.NODE_ENV?.toUpperCase()}\'`,
-  );
+  const logger = new Logger('Environment');
+  logger.verbose(`Application running on env \'${process.env.NODE_ENV}\'`);
   logger.verbose(`Application running on env file \'${filenameConfig()}\'`);
 };

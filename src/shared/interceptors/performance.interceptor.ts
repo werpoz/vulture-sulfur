@@ -11,20 +11,24 @@ import {
   NestInterceptor,
   ExecutionContext,
   CallHandler,
+  Logger,
 } from '@nestjs/common';
+import { Request } from 'express';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class PerformanceInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
-    const request = context.switchToHttp().getRequest();
-    const start = Date.now();
+    const request: Request = context.switchToHttp().getRequest();
+    const start: number = Date.now();
     return next.handle().pipe(
       tap(() => {
         const duration = Date.now() - start;
-        console.error(
-          `Request ${request.method} to ${request.url} in ${duration}ms`,
+        Logger.debug(
+          `Request {${request.url}, ${request.method}} route +${duration}ms \r\n
+         ${JSON.stringify(request.body)} \r\n`,
+          `${[context.getClass().name]}`,
         );
       }),
     );

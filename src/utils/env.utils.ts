@@ -9,20 +9,19 @@
 
 export const getEnvironment = (): string => {
   const env = process.env.NODE_ENV || 'development';
-
   if (env === 'development') {
     return 'development';
   } else if (env === 'production') {
     return 'production';
   } else {
-    return 'unknown';
+    throw Error("only environment 'development' or 'production'");
   }
 };
 
 export const isDevelopment = (): boolean => {
-  return process.env.NODE_ENV === 'development';
+  return getEnvironment() === 'development';
 };
 
 export const isProduction = (): boolean => {
-  return process.env.NODE_ENV === 'production';
+  return getEnvironment() === 'production';
 };
