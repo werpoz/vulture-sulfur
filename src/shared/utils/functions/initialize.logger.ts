@@ -8,10 +8,11 @@
  */
 
 import { Logger } from '@nestjs/common';
-import filenameConfig from '@/utils/filename.config';
+import filenameConfig from './filename.config';
+import { getEnvironment } from './env.utils';
 
 export default () => {
   const logger = new Logger('Environment');
-  logger.verbose(`Application running on env \'${process.env.NODE_ENV}\'`);
+  logger.verbose(`Application running on env \'${getEnvironment()}\'`);
   logger.verbose(`Application running on env file \'${filenameConfig()}\'`);
 };

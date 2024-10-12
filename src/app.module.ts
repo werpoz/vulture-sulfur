@@ -7,14 +7,18 @@
  * with this source code in the file LICENSE.
  */
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import filenameConfig from './utils/filename.config';
+import filenameConfig from './shared/utils/functions/filename.config';
+import { EventEmitterModule } from '@nestjs/event-emitter';
+import { UserModule } from './[user]/user.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ envFilePath: filenameConfig() })],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    ConfigModule.forRoot({ envFilePath: filenameConfig() }),
+    EventEmitterModule.forRoot(),
+    UserModule,
+  ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

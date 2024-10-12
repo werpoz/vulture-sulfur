@@ -7,8 +7,12 @@
  * with this source code in the file LICENSE.
  */
 
-import { isProduction } from '@/utils/env.utils';
+import { validate, version } from 'uuid';
 
-export default () => {
-  return isProduction() ? '.env' : '.env.local';
-};
+export class UserId {
+  private readonly id: string;
+
+  private isValidUserId(value: string): boolean {
+    return validate(value) && version(value) === 4;
+  }
+}

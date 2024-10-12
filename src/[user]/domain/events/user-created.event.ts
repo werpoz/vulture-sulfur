@@ -6,11 +6,10 @@
  * This source file is subject to a proprietary license that is bundled
  * with this source code in the file LICENSE.
  */
-import { Injectable } from '@nestjs/common';
-
-@Injectable()
-export class AppService {
-  getHello(): string {
-    return 'Hello World!';
-  }
+export class UserCreatedEvent {
+  constructor(
+    public readonly userId: string,
+    public readonly email: string,
+    public readonly createdAt: Date,
+  ) {}
 }

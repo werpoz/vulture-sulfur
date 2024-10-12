@@ -8,9 +8,9 @@
  */
 
 import { NestInterceptor } from '@nestjs/common';
-import { isDevelopment } from '@/utils/env.utils';
 import { EnvironmentInterceptor } from '@/shared/interceptors/environment.interceptor';
 import { PerformanceInterceptor } from '@/shared/interceptors/performance.interceptor';
+import { isDevelopment } from './env.utils';
 
 export function getInterceptorsByEnvironment() {
   const productionInterceptors: Array<NestInterceptor> = [];

@@ -1,3 +1,16 @@
 ### Obtener el Hola Mundo de NestJS
 GET http://localhost:3000/
 Content-Type: application/json
+
+
+
+
+### Crear un nuevo usuario
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com"
+}
+

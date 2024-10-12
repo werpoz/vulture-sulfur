@@ -8,8 +8,8 @@
  */
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '@/app.module';
-import initializeLogger from './utils/initialize.logger';
-import { getInterceptorsByEnvironment } from './utils/interceptors.util';
+import initializeLogger from './shared/utils/functions/initialize.logger';
+import { getInterceptorsByEnvironment } from './shared/utils/functions/interceptors.util';
 
 async function bootstrap() {
   initializeLogger();

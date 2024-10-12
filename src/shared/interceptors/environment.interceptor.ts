@@ -6,7 +6,7 @@
  * This source file is subject to a proprietary license that is bundled
  * with this source code in the file LICENSE.
  */
-import { getEnvironment } from '@/utils/env.utils';
+
 import {
   Injectable,
   NestInterceptor,
@@ -15,6 +15,7 @@ import {
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { getEnvironment } from '../utils/functions/env.utils';
 
 @Injectable()
 export class EnvironmentInterceptor implements NestInterceptor {
