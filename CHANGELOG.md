@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/Zerveros/skeleton-nestjs/compare/v1.1.1...v1.2.0) (2024-10-12)
+
+
+### Features
+
+* **app:** ddd ([a0b87c0](https://github.com/Zerveros/skeleton-nestjs/commit/a0b87c01b2cc1c4dec65280b7b49dbe170030a01))
+* **cli:** display environment info correctly ([aa99874](https://github.com/Zerveros/skeleton-nestjs/commit/aa99874c7f230fcfb9d8569a1b358e353445aaea))
+
 ### [1.1.1](https://github.com/Zerveros/skeleton-nestjs/compare/v1.1.0...v1.1.1) (2024-10-10)
 
 ## 1.1.0 (2024-10-10)
